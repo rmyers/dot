@@ -1,0 +1,18 @@
+[user]
+	name = Robert Myers
+	email = robert.myers@rackspace.com
+[push]
+	default = simple
+[alias]
+	s = status -sb
+	df = diff --cached --color --color-words
+	dff = diff --color --color-words
+	current-branch = rev-parse --abbrev-ref HEAD
+	graph = log --graph --decorate --oneline --branches
+	l = log
+	co = checkout
+	ci = commit
+[color]
+	ui = auto
+[url "git@github.com:"]
+	insteadOf = https://github.com/
