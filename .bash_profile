@@ -46,13 +46,6 @@ else
     RESET="\033[m"
 fi
 
-# export MAGENTA
-# export ORANGE
-# export GREEN
-# export PURPLE
-# export BOLD
-# export RESET
-
 # Git branch details
 function parse_git_dirty() {
     [[ $(git status 2> /dev/null | tail -n1) != *"working tree clean"* ]] && echo "*"
