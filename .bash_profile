@@ -46,12 +46,12 @@ else
     RESET="\033[m"
 fi
 
-export MAGENTA
-export ORANGE
-export GREEN
-export PURPLE
-export BOLD
-export RESET
+# export MAGENTA
+# export ORANGE
+# export GREEN
+# export PURPLE
+# export BOLD
+# export RESET
 
 # Git branch details
 function parse_git_dirty() {
