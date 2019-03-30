@@ -54,7 +54,7 @@ function parse_git_branch() {
 symbol="⚡ "
 
 export PS1="\[${MAGENTA}\]\u \[$RESET\]in \[$GREEN\]\w\[$RESET\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$RESET\]\n$symbol \[$RESET\]"
-export PS2="\[$ORANGE\]→ \[$RESET\]"
+export PS2="\[$ORANGE\]→\[$RESET\]"
 
 
 ### Misc
@@ -67,3 +67,9 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/rmyers/google-cloud-sdk/path.bash.inc' ]; then source '/Users/rmyers/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/rmyers/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/rmyers/google-cloud-sdk/completion.bash.inc'; fi

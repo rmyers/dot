@@ -12,9 +12,10 @@ source /usr/local/bin/virtualenvwrapper_lazy.sh
 alias ll='ls -la'
 alias ldap='ldapsearch -xLLL -H ldap://auth.edir.rackspace.com/o=rackspace "(cn=robe5515)"'
 
-export PATH="$HOME/bin:$PATH:$HOME/.rvm/bin:$GOPATH/bin"
+export PATH="$HOME/bin:$PATH:$HOME/.rvm/bin:$GOPATH/bin:$HOME/google-cloud-sdk/bin"
 
 function findport() {
    local port=$1
    sudo lsof -n -i4TCP:$port | grep LISTEN
 }
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
