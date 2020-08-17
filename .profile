@@ -19,3 +19,5 @@ function findport() {
    sudo lsof -n -i4TCP:$port | grep LISTEN
 }
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+source $HOME/qe.sh

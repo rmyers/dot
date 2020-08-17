@@ -73,3 +73,8 @@ if [ -f '/Users/rmyers/google-cloud-sdk/path.bash.inc' ]; then source '/Users/rm
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/rmyers/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/rmyers/google-cloud-sdk/completion.bash.inc'; fi
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
