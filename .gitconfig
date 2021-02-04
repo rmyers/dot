@@ -1,6 +1,6 @@
 [user]
 	name = Robert Myers
-	email = myer0052@gmail.com
+	email = robert.myers@stardog.com
 [push]
 	default = simple
 [alias]
@@ -16,3 +16,5 @@
 	ui = auto
 [http]
 	sslVerify = true
+[core]
+	hooksPath = /Users/rmyers/workspace/dot/hooks
