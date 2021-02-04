@@ -1,4 +1,4 @@
-echo "Running: .profile lkj"
+echo "Running: .profile"
 
 export GOPATH=$HOME/golib
 
