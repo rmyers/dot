@@ -1,6 +1,6 @@
 [user]
 	name = Robert Myers
-	email = robert.myers@rackspace.com
+	email = myer0052@gmail.com
 [push]
 	default = simple
 [alias]
@@ -14,7 +14,5 @@
 	ci = commit
 [color]
 	ui = auto
-#[url "git@github.com:"]
-#	insteadOf = https://github.com/
 [http]
 	sslVerify = true

@@ -1,7 +1,10 @@
 echo "Running: .profile"
 
 export GOPATH=$HOME/golib
+
+# virtualenv
 export WORKON_HOME=$HOME/envs
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Aliases
 alias ll='ls -la'
@@ -14,9 +17,11 @@ function findport() {
 # For bazel
 export PATH="$PATH:$HOME/bin"
 
-# For stardog
+# For Stardog
 export STARDOG_HOME=$HOME/stardog
 export PATH="$PATH:$HOME/workspace/stardog/bin"
+# SWITCH TO JAVA VERSION 8
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # Secrets
-source .secrets
+source $HOME/.secrets

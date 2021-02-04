@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# This will take a well named branch and prepare a well
+# formatted message to use as a commit message. For
+# example the following branch name:
+#
+#    feature/JIRA-12345-summary-of-changes
+#
+# Will result in a commit message like:
+#
+#    [JIRA-12345] feature: summary of changes
+#
+commit_msg=$1
+commit_source=$2
+branch=$(git symbolic-ref --short HEAD)
+
+pat='(.*)\/([A-Z]{3,6}-[0-9]+)-(.*)'
+
+if [[ "$commit_source" == "commit" ]]; then
+  # ingore git commit --amend and keep the original message
+  echo "Appended to existing commit"
+else
+  if [[ "$branch" =~ $pat ]]; then
+    # only change message when branches match
+    TASK="${BASH_REMATCH[1]}"
+    JIRA="${BASH_REMATCH[2]}"
+    SUMMARY=$(echo "${BASH_REMATCH[3]}" | sed -e 's/-/ /g')
+
+    # Save the existing message add by git
+    existing_message=$(<$commit_msg)
+    echo "[$JIRA] $TASK: $SUMMARY" > $commit_msg
+    echo "${existing_message}" >> $commit_msg
+  fi
+fi
