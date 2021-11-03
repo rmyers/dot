@@ -12,8 +12,10 @@ alias ll='ls -la'
 alias ecr-login-cloud='aws ecr get-login-password --profile stardog-cloud --region us-west-2 | docker login --username AWS --password-stdin 371870107528.dkr.ecr.us-west-2.amazonaws.com'
 alias ecr-login-prod='aws ecr get-login-password --profile stardog-prod --region us-west-2 | docker login --username AWS --password-stdin 195188011627.dkr.ecr.us-west-2.amazonaws.com'
 alias stardog-cloud='export AWS_PROFILE=stardog-cloud'
-alias stardog-union='export AWS_PROFILE=stardog-union'
+alias stardog-jenkins='export AWS_PROFILE=stardog-jenkins'
 alias stardog-prod='export AWS_PROFILE=stardog-prod'
+alias stardog-union='export AWS_PROFILE=stardog-union'
+alias kube-get-all='kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found'
 
 function findport() {
    local port=$1
