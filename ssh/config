@@ -1,0 +1,21 @@
+ForwardAgent yes
+ServerAliveInterval 200
+ServerAliveCountMax 3
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+
+Host *
+   UseKeychain yes
+   AddKeysToAgent yes
+
+###
+### Julython.org
+### 
+Host july
+  Hostname july.julython.org
+  User rmyers
+
+Host january
+  Hostname january.julython.org
+  User rmyers
+
