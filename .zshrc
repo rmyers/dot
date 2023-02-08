@@ -74,6 +74,11 @@ plugins=(git python)
 
 source $ZSH/oh-my-zsh.sh
 
+function findport() {
+   local port=$1
+   sudo lsof -n -i4TCP:$port | grep LISTEN
+}
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -124,3 +129,7 @@ unset __conda_setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Fix tab history
+unsetopt inc_append_history
+unsetopt share_history
