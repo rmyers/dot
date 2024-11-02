@@ -19,3 +19,4 @@
 [core]
 	hooksPath = /Users/rmyers/workspace/dot/hooks
 	pager = less -F -X
+        editor = vi

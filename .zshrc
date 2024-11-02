@@ -65,12 +65,14 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+zstyle :omz:plugins:ssh-agent identities id_rsa
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python)
+plugins=(git python ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,19 +110,18 @@ function findport() {
 # AWS
 export AWS_PROFILE=anaconda-dev
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/rmyers/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/rmyers/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/rmyers/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/rmyers/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/rmyers/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/rmyers/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/rmyers/opt/anaconda3/etc/profile.d/conda.sh"
+    elif [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/rmyers/anaconda3/bin:$PATH"
+        export PATH="/Users/rmyers/opt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -131,6 +132,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source $HOME/.secrets
+
+# Deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 
 # Fix tab history
 unsetopt inc_append_history
